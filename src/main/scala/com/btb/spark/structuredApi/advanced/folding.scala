@@ -61,7 +61,6 @@ import spark.implicits._
 
     actualDF.show()
 
-
     def snakeCaseColumns(df: DataFrame): DataFrame = {
       df.columns.foldLeft(df) { (memoDF, colName) =>
         memoDF.withColumnRenamed(colName, toSnakeCase(colName))
@@ -72,15 +71,11 @@ import spark.implicits._
       str.toLowerCase().replace(" ", "_")
     }
 
-
     val sourceDF1 = Seq(
       ("funny", "joke")
     ).toDF("A b C", "de F")
 
     sourceDF1.show()
-
-
-
 
     val actualDF1 = sourceDF1.transform(snakeCaseColumns)
     actualDF1.show()
