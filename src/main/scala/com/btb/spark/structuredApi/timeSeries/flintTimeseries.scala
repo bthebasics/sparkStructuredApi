@@ -19,6 +19,10 @@ import org.graphframes._
 import com.twosigma.flint.timeseries.TimeSeriesRDD
 import scala.concurrent.duration._
 import com.twosigma.flint.timeseries.CSV
+import com.twosigma.flint.timeseries.summarize
+import com.twosigma.flint.FlintConf
+import com.twosigma.flint.timeseries
+
 
 
 // ref : https://github.com/twosigma/flint
@@ -36,6 +40,8 @@ object flintTimeseries {
       dateFormat = "yyyy-mm-dd",
       sorted = true
     )
+
+    val df =
 
     tsRdd.cache()
     val dataset = tsRdd.collect()
