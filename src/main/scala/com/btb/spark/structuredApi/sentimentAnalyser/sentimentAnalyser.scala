@@ -11,7 +11,6 @@ import edu.stanford.nlp.pipeline.StanfordCoreNLP
 import edu.stanford.nlp.sentiment.SentimentCoreAnnotations
 import org.apache.spark.sql.functions.udf
 
-
 object sentimentAnalyser {
   def main(args: Array[String]): Unit = {
 
@@ -31,8 +30,6 @@ object sentimentAnalyser {
     //reviews.printSchema()
     val df2 = reviews.select("id","reviews_text") //.createTempView("AmazonData")
     val cleanupUdf = udf(onlyWords _)
-
-
 
     val detectSentiUDF = udf(guessSenti _ )
 
@@ -84,7 +81,7 @@ object sentimentAnalyser {
   }
 
   def onlyWords(text: String) : String = {
-    text.split(" ").filter(_.matches("^[a-zA-Z0-9 ]+$")).fold("")((a,b) => a + " " + b).trim
+    text.split(" ").filter(_.matches("^[a-zA-Z0-9 ]+$")).fold("")((a,b) => a + " " + b).trim.toLowerCase
   }
 
 

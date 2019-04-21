@@ -27,9 +27,17 @@ libraryDependencies += "com.cloudera.sparkts" % "sparkts" % "0.4.0"
 // https://mvnrepository.com/artifact/com.twosigma/flint
 libraryDependencies += "com.twosigma" % "flint" % "0.6.0"
 
+// https://mvnrepository.com/artifact/com.github.apanimesh061/vader-sentiment-analyzer
+libraryDependencies += "com.github.apanimesh061" % "vader-sentiment-analyzer" % "1.0"
+// https://mvnrepository.com/artifact/org.apache.lucene/lucene-analyzers-common
+libraryDependencies += "org.apache.lucene" % "lucene-analyzers-common" % "4.0.0-BETA"
+
 
 // https://mvnrepository.com/artifact/com.databricks/spark-xml
 libraryDependencies += "com.databricks" %% "spark-xml" % "0.4.1"
+
+libraryDependencies += "edu.stanford.nlp" % "stanford-corenlp" % "3.5.1" classifier "models"
+libraryDependencies += "edu.stanford.nlp" % "stanford-corenlp" % "3.5.1"
 
 libraryDependencies += "com.amazonaws" % "aws-java-sdk" %   "1.7.4"
 libraryDependencies += "org.apache.hadoop" % "hadoop-aws" % "2.7.3" excludeAll(
